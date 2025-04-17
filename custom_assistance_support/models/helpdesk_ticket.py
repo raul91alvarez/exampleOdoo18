@@ -1,10 +1,16 @@
 import logging
-from odoo import models, api
+from odoo import models, api, fields
 
 _logger = logging.getLogger(__name__)
 
 class HelpdeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
+    
+    ticket_type_id = fields.Many2one(
+        'ticket.type',
+        string='Ticket Type',
+        help='Type of ticket'
+    )
 
     @api.model
     def create(self, vals):
@@ -31,8 +37,17 @@ class HelpdeskTicket(models.Model):
                 )
                 _logger.info("Mensaje enviado al canal General desde admin para ticket %s", ticket.id)
                 _logger.info("Message sent for ticket %s", ticket.id)
+                # Notificar a través del bus
+                message = {
+                    "type": "notification",
+                    "title": "Nuevo ticket creado",
+                    "message": f"Se ha creado un nuevo ticket",
+                    "sticky": False,
+                }
+                self["bus.bus"]._sendone(partner_admin.id, canal, message)
             else:
                 _logger.warning("Channel or user admin not found.")
+                
 
         except Exception as e:
             _logger.error("Error to send message: %s", str(e))

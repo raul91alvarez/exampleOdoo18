@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="ticket_type_view_tree" model="ir.ui.view">
+        <field name="name">tickets.types.view.tree</field>
+        <field name="model">ticket.type</field>
+        <field name="arch" type="xml">
+            <list editable="top" string="Tickets Types" sample="1" multi_edit="1">
+                <field name="name" />
+                <field name="color" widget="color_picker" optional="show" />
+            </list>
+        </field>
+    </record>
+
+    <record id="ticket_type_view_form" model="ir.ui.view">
+        <field name="name">ticket.type.form</field>
+        <field name="model">ticket.type</field>
+        <field name="arch" type="xml">
+            <form string="Ticket Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="color" widget="color_picker" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ticket_type_action" model="ir.actions.act_window">
+        <field name="name">Ticket Type</field>
+        <field name="res_model">ticket.type</field>
+        <field name="path">tickets-types</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No Ticket Type found. Let's create one!
+            </p>
+            <p>
+                Type of ticket to be created.
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="helpdesk_ticket_type_menu"
+        action="ticket_type_action"
+        sequence="16"
+        parent="helpdesk.helpdesk_menu_config"
+        groups="base.group_no_one" />
+
+</odoo>

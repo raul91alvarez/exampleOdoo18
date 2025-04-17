@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="request_type_solicitud" model="ticket.type">
+        <field name="name">Solicitud</field>
+        <field name="color">3</field>
+    </record>
+
+    <record id="request_type_incidente" model="ticket.type">
+        <field name="name">Incidente</field>
+        <field name="color">5</field>
+    </record>
+
+    <record id="request_type_control_cambio" model="ticket.type">
+        <field name="name">Control de cambio</field>
+        <field name="color">7</field>
+    </record>
+
+    <record id="request_type_proyecto" model="ticket.type">
+        <field name="name">Proyecto</field>
+        <field name="color">2</field>
+    </record>
+
+    <record id="request_type_compra" model="ticket.type">
+        <field name="name">Compra</field>
+        <field name="color">8</field>
+    </record>
+</odoo>
