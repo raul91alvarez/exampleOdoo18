@@ -2,3 +2,4 @@
 
 from . import helpdesk_ticket
 from . import ticket_type
+from . import follower_group

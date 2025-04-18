@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_follower_group_tree" model="ir.ui.view">
+        <field name="name">mail.follower.group.tree</field>
+        <field name="model">mail.follower.group</field>
+        <field name="arch" type="xml">
+            <list editable="top" string="Follower Groups" sample="1" multi_edit="1">
+                <field name="name" />
+                <field name="partner_ids" widget="many2many_tags" />
+            </list>
+        </field>
+    </record>
+
+    <record
+        id="view_follower_group_form" model="ir.ui.view">
+        <field name="name">mail.follower.group.form</field>
+        <field name="model">mail.follower.group</field>
+        <field name="arch" type="xml">
+            <form string="Follower Group">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="partner_ids" widget="many2many_tags" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record
+        id="action_follower_group" model="ir.actions.act_window">
+        <field name="name">Follower Group</field>
+        <field name="res_model">mail.follower.group</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_follower_group_action"
+        name="Follower Groups"
+        action="action_follower_group"
+        sequence="17"
+        parent="helpdesk.helpdesk_menu_config"
+        groups="base.group_no_one" />
+
+</odoo>

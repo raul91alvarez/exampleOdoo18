@@ -11,6 +11,14 @@ class HelpdeskTicket(models.Model):
         string='Ticket Type',
         help='Type of ticket'
     )
+    
+    follower_group_id = fields.Many2one('mail.follower.group', string='Follower Group', help='Group of followers for this ticket')
+
+    @api.onchange('follower_group_id')
+    def _onchange_follower_group(self):
+        if self.follower_group_id:
+            self.message_subscribe(partner_ids=self.follower_group_id.partner_ids.ids)
+
 
     @api.model
     def create(self, vals):
@@ -37,14 +45,8 @@ class HelpdeskTicket(models.Model):
                 )
                 _logger.info("Mensaje enviado al canal General desde admin para ticket %s", ticket.id)
                 _logger.info("Message sent for ticket %s", ticket.id)
-                # Notificar a través del bus
-                message = {
-                    "type": "notification",
-                    "title": "Nuevo ticket creado",
-                    "message": f"Se ha creado un nuevo ticket",
-                    "sticky": False,
-                }
-                self["bus.bus"]._sendone(partner_admin.id, canal, message)
+                
+                
             else:
                 _logger.warning("Channel or user admin not found.")
                 
