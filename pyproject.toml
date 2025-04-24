@@ -4,7 +4,7 @@ version = "0.1.0"
 tag_format = "v$version"
 
 [tool.commitizen.customize]
-message_template = "{{change_type}}({modules}): {{message}}\n\n{{body}}"
+message_template = "[{{change_type}}]({{modules}}): {{message}}\n\n{{body}}"
 questions = [
   { name = "change_type", type = "list", message = "Tipo de cambio:", choices = [
     "feat",       # Nueva funcionalidad
