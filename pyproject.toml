@@ -1,7 +1,10 @@
 [tool.commitizen]
 name = "cz_customize"
-version = "0.1.0"
+version = "1.0.0"
 tag_format = "v$version"
+changelog_file = "CHANGELOG.md"
+update_changelog_on_bump = true
+
 
 [tool.commitizen.customize]
 message_template = "[{{change_type}}]({{modules}}): {{message}}\n\n{{body}}"
