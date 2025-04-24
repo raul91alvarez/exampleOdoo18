@@ -1,0 +1,24 @@
+[tool.commitizen]
+name = "cz_customize"
+version = "0.1.0"
+tag_format = "v$version"
+
+[tool.commitizen.customize]
+message_template = "{{change_type}}({modules}): {{message}}\n\n{{body}}"
+questions = [
+  { name = "change_type", type = "list", message = "Tipo de cambio:", choices = [
+    "feat",       # Nueva funcionalidad
+    "fix",        # Corrección de errores
+    "hotfix",     # Correcciones urgentes
+    "docs",       # Cambios en la documentación
+    "style",      # Formato (espacios, punto y coma, etc.)
+    "refactor",   # Cambios de código sin añadir funcionalidad ni corregir errores
+    "perf",       # Mejoras de rendimiento
+    "test",       # Agregar o corregir tests
+    "chore",      # Tareas menores del proyecto
+    "config",     # Cambios en configuración (ej: .env, Docker, pre-commit)
+  ]},
+  { name = "modules", type = "input", message = "Módulos afectados (separados por coma):" },
+  { name = "message", type = "input", message = "Breve descripción del cambio:" },
+  { name = "body", type = "input", message = "Descripción larga (opcional):", default = "" }
+]

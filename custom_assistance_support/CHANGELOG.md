@@ -7,6 +7,7 @@
 - Added the `ticket type` field to classify tickets.
 - Handling of migrations to copy the value of the field automatically created by Studio.
 - Inclusion of preloaded fields for the different ticket types.
+- Added a new follower group to be automatically included in the created ticket based on the domain of the user who generates it.
 
 ### Fixed
 - N/A (First release)

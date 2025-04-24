@@ -1,5 +1,3 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from . import helpdesk_ticket
-from . import ticket_type
-from . import follower_group
+from . import follower_group, helpdesk_ticket, ticket_type  # noqa: F401
