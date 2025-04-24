@@ -2,7 +2,7 @@
 # flake8: noqa: B018
 {
     "name": "Custom Assistance Support",
-    "version": "1.0.6",
+    "version": "1.0.1",
     "depends": ["helpdesk", "mail"],
     "author": "Synapsis",
     "website": "https://synapsisbpo.com/",

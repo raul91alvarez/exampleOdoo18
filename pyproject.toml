@@ -7,19 +7,22 @@ update_changelog_on_bump = true
 
 
 [tool.commitizen.customize]
-message_template = "[{{change_type}}]({{modules}}): {{message}}\n\n{{body}}"
+message_template = "[{{change_type}}]({{change}})({{modules}}): {{message}}\n\n{{body}}"
 questions = [
   { name = "change_type", type = "list", message = "Tipo de cambio:", choices = [
     "feat",       # Nueva funcionalidad
     "fix",        # Corrección de errores
-    "hotfix",     # Correcciones urgentes
+    "refactor",   # Cambios de código sin añadir funcionalidad ni corregir errores
     "docs",       # Cambios en la documentación
     "style",      # Formato (espacios, punto y coma, etc.)
-    "refactor",   # Cambios de código sin añadir funcionalidad ni corregir errores
     "perf",       # Mejoras de rendimiento
     "test",       # Agregar o corregir tests
     "chore",      # Tareas menores del proyecto
     "config",     # Cambios en configuración (ej: .env, Docker, pre-commit)
+  ]},
+  { name = "change", type = "list", message = "Cambio realizado:", choices = [
+    "hotfix",     # Cambios urgentes
+    "normal"      # Cambios normales
   ]},
   { name = "modules", type = "input", message = "Módulos afectados (separados por coma):" },
   { name = "message", type = "input", message = "Breve descripción del cambio:" },
