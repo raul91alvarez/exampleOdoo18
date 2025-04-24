@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <list editable="top" string="Follower Groups" sample="1" multi_edit="1">
                 <field name="name" />
+                <field name="domain"/>
                 <field name="partner_ids" widget="many2many_tags" />
             </list>
         </field>
@@ -20,6 +21,7 @@
                 <sheet>
                     <group>
                         <field name="name" />
+                        <field name="domain"/>
                         <field name="partner_ids" widget="many2many_tags" />
                     </group>
                 </sheet>

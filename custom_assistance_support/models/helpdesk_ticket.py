@@ -18,11 +18,6 @@ class HelpdeskTicket(models.Model):
         help="Group of followers for this ticket",
     )
 
-    @api.onchange("follower_group_id")
-    def _onchange_follower_group(self):
-        if self.follower_group_id:
-            self.message_subscribe(partner_ids=self.follower_group_id.partner_ids.ids)
-
     @api.model
     def create(self, vals):
         ticket = super().create(vals)
@@ -61,4 +56,33 @@ class HelpdeskTicket(models.Model):
         except Exception as e:
             _logger.error("Error to send message: %s", str(e))
 
+        # get de current user's mail and verify FollowerGroup
+        try:
+            user_email = self.env.user.partner_id.email
+            _logger.info("User email: %s", user_email)
+            if user_email:
+                domain_parts = user_email.split("@")
+                if len(domain_parts) == 2:
+                    group = self.env["mail.follower.group"].search(
+                        [("domain", "=", domain_parts[1])], limit=1
+                    )
+
+                    domain = group.domain if group else None
+                    _logger.info("Domain from FollowerGroup: %s", domain)
+                    if domain:
+                        _logger.info("Domain: %s", domain)
+                        # add as follwer all partner of the group
+                        ticket.message_subscribe(partner_ids=group.partner_ids.ids)
+                        _logger.info("Followers added to ticket %s", ticket.id)
+
+                    else:
+                        _logger.warning(
+                            "No domain found for the user email: %s", user_email
+                        )
+                else:
+                    _logger.warning("Invalid domain format: %s", domain)
+            else:
+                _logger.warning("Domain or user email is empty.")
+        except Exception as e:
+            _logger.error("Error to add followers: %s", str(e))
         return ticket

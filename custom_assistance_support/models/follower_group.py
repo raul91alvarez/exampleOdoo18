@@ -7,3 +7,4 @@ class FollowerGroup(models.Model):
 
     name = fields.Char(required=True)
     partner_ids = fields.Many2many("res.partner", string="Contacts")
+    domain = fields.Char(string="Domain Contacts")
