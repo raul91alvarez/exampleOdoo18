@@ -7,7 +7,7 @@ update_changelog_on_bump = true
 
 
 [tool.commitizen.customize]
-message_template = "[{{change_type}}]({{change}})({{modules}}): {{message}}\n\n{{body}}"
+message_template = "{{change_type}}({{change}})({{modules}}): {{message}}\n\n{{body}}"
 questions = [
   { name = "change_type", type = "list", message = "Tipo de cambio:", choices = [
     "feat",       # Nueva funcionalidad
