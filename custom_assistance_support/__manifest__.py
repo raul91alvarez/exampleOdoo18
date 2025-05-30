@@ -17,6 +17,7 @@
         "views/ticket_type_views.xml",
         "views/helpdesk_ticket_views.xml",
         "views/follower_group_views.xml",
+        "views/helpdesk_sla_views.xml",
         "security/ir.model.access.csv",
     ],
     "migrations": [

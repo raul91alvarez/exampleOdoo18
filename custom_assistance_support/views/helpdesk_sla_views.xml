@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="helpdesk_sla_view_tree_inherit_request_type" model="ir.ui.view">
+        <field name="name">helpdesk.sla.list.inherit.request.type</field>
+        <field name="model">helpdesk.sla</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_sla_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="request_type_ids" widget="many2many_tags" optional="hide" options="{'color_field': 'color'}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="helpdesk_sla_view_form_inherit_request_type" model="ir.ui.view">
+        <field name="name">helpdesk.sla.form.inherit.request.type</field>
+        <field name="model">helpdesk.sla</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_sla_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='priority']" position="after">
+                <label for="request_type_ids"/>
+                <div class="d-flex justify-content-center">
+                    <field name="request_type_ids" class="" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                    <div class="text-end text-muted col-4">(any of these requests)</div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+
+</odoo>

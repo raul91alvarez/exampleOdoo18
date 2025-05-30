@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 import logging
 
 from odoo import api, fields, models
+from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 
@@ -89,3 +91,56 @@ class HelpdeskTicket(models.Model):
         except Exception as e:
             _logger.error("Error to add followers: %s", str(e))
         return ticket
+
+    def _sla_find(self):
+        """Override Odoo's SLA find logic to add x_request_type comparison."""
+        tickets_map = {}
+        sla_domain_map = {}
+
+        def _generate_key(ticket):
+            fields_list = self._sla_reset_trigger()
+            key = list()
+            for field_name in fields_list:
+                if ticket._fields[field_name].type == "many2one":
+                    key.append(ticket[field_name].id)
+                else:
+                    key.append(ticket[field_name])
+            return tuple(key)
+
+        for ticket in self:
+            if ticket.team_id.use_sla:
+                key = _generate_key(ticket)
+                tickets_map.setdefault(key, self.env["helpdesk.ticket"])
+                tickets_map[key] |= ticket
+                if key not in sla_domain_map:
+                    sla_domain_map[key] = expression.AND(
+                        [
+                            [
+                                ("team_id", "=", ticket.team_id.id),
+                                ("priority", "=", ticket.priority),
+                                ("stage_id.sequence", ">=", ticket.stage_id.sequence),
+                            ],
+                            expression.OR(
+                                [
+                                    ticket._sla_find_extra_domain(),
+                                    self._sla_find_false_domain(),
+                                ]
+                            ),
+                        ]
+                    )
+
+        result = {}
+        for key, tickets in tickets_map.items():
+            domain = sla_domain_map[key]
+            slas = self.env["helpdesk.sla"].search(domain)
+            # add filter to field request_type_ids
+            result[tickets] = slas.filtered(
+                lambda s, tickets=tickets: (
+                    (not s.tag_ids or (tickets.tag_ids & s.tag_ids))
+                    and (
+                        not s.request_type_ids
+                        or tickets[0].request_type_ids == s.request_type_ids
+                    )
+                )
+            )
+        return result
