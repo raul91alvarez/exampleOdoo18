@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="access_control" model="request.type">
+            <field name="name">Control de accesos</field>
+            <field name="color">1</field>
+        </record>
+        <record id="team_management" model="request.type">
+            <field name="name">Teams</field>
+            <field name="color">2</field>
+        </record>
+        <record id="email_forwarding" model="request.type">
+            <field name="name">Forward</field>
+            <field name="color">3</field>
+        </record>
+        <record id="network_points" model="request.type">
+            <field name="name">Puntos de Red</field>
+            <field name="color">4</field>
+        </record>
+        <record id="employee_onboarding" model="request.type">
+            <field name="name">Altas - Solo RRHH</field>
+            <field name="color">5</field>
+        </record>
+        <record id="tech_service" model="request.type">
+            <field name="name">Servicio de Tecnología</field>
+            <field name="color">6</field>
+        </record>
+        <record id="microstrategy_access" model="request.type">
+            <field name="name">Microstrategy</field>
+            <field name="color">7</field>
+        </record>
+        <record id="wifi_connection" model="request.type">
+            <field name="name">Conexión WIFI</field>
+            <field name="color">8</field>
+        </record>
+        <record id="notebook_request" model="request.type">
+            <field name="name">Solicitud de Notebook</field>
+            <field name="color">9</field>
+        </record>
+        <record id="software_request" model="request.type">
+            <field name="name">Requerimiento de software</field>
+            <field name="color">10</field>
+        </record>
+        <record id="interaction_desktop" model="request.type">
+            <field name="name">Interaction Desktop</field>
+            <field name="color">11</field>
+        </record>
+        <record id="remote_pc_access" model="request.type">
+            <field name="name">Conexión remota a PC</field>
+            <field name="color">12</field>
+        </record>
+        <record id="user_accounts_apps" model="request.type">
+            <field name="name">Cuentas de Usuarios Aplicaciones</field>
+            <field name="color">13</field>
+        </record>
+        <record id="employee_offboarding" model="request.type">
+            <field name="name">Bajas - Solo RRHH</field>
+            <field name="color">14</field>
+        </record>
+        <record id="equipment_handling" model="request.type">
+            <field name="name">Instalación / reubicación y préstamo de equipos</field>
+            <field name="color">15</field>
+        </record>
+        <record id="vpn_connection" model="request.type">
+            <field name="name">Conexión VPN</field>
+            <field name="color">16</field>
+        </record>
+        <record id="onsite_support" model="request.type">
+            <field name="name">Soporte en Sitio</field>
+            <field name="color">17</field>
+        </record>
+        <record id="device_configuration" model="request.type">
+            <field name="name">Configuración de equipos</field>
+            <field name="color">18</field>
+        </record>
+        <record id="printing_support" model="request.type">
+            <field name="name">Impresión</field>
+            <field name="color">19</field>
+        </record>
+        <record id="file_transfer" model="request.type">
+            <field name="name">Envio de Archivos (SFTP - Correo=)</field>
+            <field name="color">20</field>
+        </record>
+        <record id="office_365_access" model="request.type">
+            <field name="name">Office 365</field>
+            <field name="color">21</field>
+        </record>
+        <record id="web_access" model="request.type">
+            <field name="name">Acceso a sitio web</field>
+            <field name="color">22</field>
+        </record>
+        <record id="softphone_config" model="request.type">
+            <field name="name">Softphone</field>
+            <field name="color">23</field>
+        </record>
+        <record id="zimbra_email" model="request.type">
+            <field name="name">Correo Zimbra</field>
+            <field name="color">24</field>
+        </record>
+        <record id="user_errors" model="request.type">
+            <field name="name">Error de usuarios</field>
+            <field name="color">25</field>
+        </record>
+        <record id="power_bi" model="request.type">
+            <field name="name">Power BI</field>
+            <field name="color">26</field>
+        </record>
+        <record id="campaign_movement" model="request.type">
+            <field name="name">Movimiento de Campañas</field>
+            <field name="color">27</field>
+        </record>
+        <record id="ucontact" model="request.type">
+            <field name="name">Ucontact</field>
+            <field name="color">28</field>
+        </record>
+        <record id="antivirus_setup" model="request.type">
+            <field name="name">Antivirus</field>
+            <field name="color">29</field>
+        </record>
+        <record id="icbm_access" model="request.type">
+            <field name="name">IC Business Manager</field>
+            <field name="color">30</field>
+        </record>
+        <record id="desktop_apps" model="request.type">
+            <field name="name">Aplicaciones de escritorio</field>
+            <field name="color">31</field>
+        </record>
+    </data>
+</odoo>

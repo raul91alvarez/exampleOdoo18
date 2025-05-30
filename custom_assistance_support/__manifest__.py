@@ -2,7 +2,7 @@
 # flake8: noqa: B018
 {
     "name": "Custom Assistance Support",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "depends": ["helpdesk", "mail"],
     "author": "Synapsis",
     "website": "https://synapsisbpo.com/",
@@ -11,7 +11,9 @@
     "installable": True,
     "auto_install": False,
     "data": [
+        "data/request_type_data.xml",
         "data/ticket_type_data.xml",
+        "views/request_type_views.xml",
         "views/ticket_type_views.xml",
         "views/helpdesk_ticket_views.xml",
         "views/follower_group_views.xml",
