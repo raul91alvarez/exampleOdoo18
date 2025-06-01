@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <list editable="top" string="Tickets Types" sample="1" multi_edit="1">
                 <field name="name" />
+                <field name="check_event" />
                 <field name="color" widget="color_picker" optional="show" />
             </list>
         </field>
@@ -21,6 +22,7 @@
                     <group>
                         <group>
                             <field name="name" />
+                            <field name="check_event" />
                             <field name="color" widget="color_picker" />
                         </group>
                     </group>

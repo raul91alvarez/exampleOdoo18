@@ -5,6 +5,13 @@
         <field name="model">helpdesk.ticket</field>
         <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form" />
         <field name="arch" type="xml">
+            <header>
+                <button invisible="show_button_rfc == False" name="action_open_rfc_wizard"
+                        type="object"
+                        string="Reporte RFC"
+                        class="btn-primary"
+                        icon="fa-file-pdf-o"/>
+            </header>
             <xpath expr="//field[@name='team_id']" position="after">
                 <field name="request_type_id" />
                 <field name="ticket_type_id" />

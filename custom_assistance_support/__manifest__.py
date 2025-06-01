@@ -11,6 +11,8 @@
     "installable": True,
     "auto_install": False,
     "data": [
+        "report/report_rfc_form_normal.xml",
+        "report/report_rfc_form_urgent.xml",
         "data/request_type_data.xml",
         "data/ticket_type_data.xml",
         "views/request_type_views.xml",
@@ -18,6 +20,7 @@
         "views/helpdesk_ticket_views.xml",
         "views/follower_group_views.xml",
         "views/helpdesk_sla_views.xml",
+        "wizard/form_action_rfc.xml",
         "security/ir.model.access.csv",
     ],
     "migrations": [

@@ -23,6 +23,11 @@ class HelpdeskTicket(models.Model):
         help="Group of followers for this ticket",
     )
 
+    show_button_rfc = fields.Boolean(
+        string="Show RFC Button",
+        compute="_compute_show_button_rfc",
+    )
+
     @api.model
     def create(self, vals):
         ticket = super().create(vals)
@@ -144,3 +149,28 @@ class HelpdeskTicket(models.Model):
                 )
             )
         return result
+
+    def _compute_show_button_rfc(self):
+        """When ticket type changes, set request_type_id to ticket_type_id."""
+        for ticket in self:
+            if ticket.ticket_type_id and ticket.ticket_type_id.check_event:
+                ticket.show_button_rfc = True
+            else:
+                ticket.show_button_rfc = False
+
+    @api.onchange("ticket_type_id")
+    def _onchange_ticket_type_id(self):
+        """When ticket type changes, set request_type_id to ticket_type_id."""
+        for ticket in self:
+            ticket._compute_show_button_rfc()
+
+    def action_open_rfc_wizard(self):
+        # If ticket type has check_event enabled, set request_type_id to ticket_type_id
+        return {
+            "type": "ir.actions.act_window",
+            "name": "Reporte RFC",
+            "res_model": "form.action.rfc.wizard",
+            "view_mode": "form",
+            "target": "new",
+            "context": {"default_ticket_id": self.id},
+        }

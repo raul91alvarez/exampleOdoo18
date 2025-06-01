@@ -12,6 +12,10 @@ class RequestType(models.Model):
 
     name = fields.Char(string="Name", required=True)
     color = fields.Integer(string="Color")
+    check_event = fields.Boolean(
+        string="Show RFC template",
+        help="If checked, will show the RFC template in the request form.",
+    )
 
     _sql_constraints = [
         (

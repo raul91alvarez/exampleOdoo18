@@ -1,0 +1,101 @@
+<odoo>
+    <data>
+        <template id="report_rfc_urgentII_template_pdf">
+            <t t-call="web.external_layout">
+                <main>
+                    <t t-set="item" t-value="docs[0]"/>
+                    <div class="page">
+                        <h2 style="text-align: center; margin-bottom: 20px; background-color: #d9e1f2; padding: 10px;">Control de Cambio</h2>
+                        <table style="width: 100%; border-collapse: collapse; border: 2px solid black;">
+                            <tr>
+                                <th style="width: 30%; text-align: left; padding-left: 5px; border: 2px solid black;">Tipo de Cambio:</th>
+                                <td style="text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['type_change_f2']"/>
+                                </td>
+                                <th style="width: 20%; text-align: left; padding-left: 5px; border: 2px solid black;">Solicitante:</th>
+                                <td style="text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b2']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="text-align: left; padding-left: 5px; border: 2px solid black;">Fecha y hora de implementación:</th>
+                                <td colspan="3" style="text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b3']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align: left; padding-left: 5px; border: 2px solid black;">¿Cuál es el cambio? / Descripción detallada:</th>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="height: 50px; text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b4']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align: left; padding-left: 5px; border: 2px solid black;">¿Por qué esta solicitud de cambio? / Impacto empresarial si este trabajo no se realiza:</th>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="height: 50px; text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b5']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align: left; padding-left: 5px; border: 2px solid black;">Impacto / Riesgo del Negocio (indique el SLA afectado si es posible, indique historial de riesgo si lo hay):</th>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="height: 50px; text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b6']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align: left; padding-left: 5px; border: 2px solid black;">¿Cuál es el impacto de no realizar el cambio como una solicitud urgente?</th>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="height: 50px; text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b7']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align: left; padding-left: 5px; border: 2px solid black;">¿Quién participó en la revisión técnica (nombres de los aprobadores)?</th>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="height: 50px; text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b8']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align: left; padding-left: 5px; border: 2px solid black;">¿Qué riesgo potencial se está introduciendo en el entorno mientras se realiza el cambio solicitado? ¿Qué pruebas se han completado y qué opciones de retroceso / respaldo existen?</th>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="height: 50px; text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b9']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="4" style="text-align: left; padding-left: 5px; border: 2px solid black;">¿Se han asignado los recursos para este trabajo?</th>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align: left; padding-left: 5px; border: 2px solid black;">
+                                    <t t-esc="item['campo_b10']"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </main>
+            </t>
+        </template>
+
+
+        <record id="action_report_urgent_rfc_wizard" model="ir.actions.report">
+            <field name="name">RFC Urgente</field>
+            <field name="model">form.action.rfc.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_assistance_support.report_rfc_urgentII_template_pdf</field>
+            <field name="report_file">custom_assistance_support.report_rfc_urgentII_template_pdf</field>
+            <field name="paperformat_id" ref="custom_assistance_support.paperformat_label_sheet"/>
+            <field name="print_report_name">'RFC-Urgent'</field>
+            <field name="binding_model_id" ref="custom_assistance_support.model_form_action_rfc_wizard"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

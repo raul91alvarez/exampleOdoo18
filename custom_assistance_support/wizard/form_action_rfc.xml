@@ -1,0 +1,60 @@
+<odoo>
+    <record id="view_form_action_rfc_wizard" model="ir.ui.view">
+        <field name="name">form.action.rfc.wizard.form</field>
+        <field name="model">form.action.rfc.wizard</field>
+        <field name="arch" type="xml">
+            <form string="RFC Wizard">
+                <group>
+                    <field name="option" widget="radio"/>
+                </group>
+                <group invisible="option != 'normal'">
+                    <group>
+                        <field name="id_change_f1"/>
+                        <field name="campo_a3"/>
+                        <field name="campo_a5"/>
+                        <field name="campo_a7"/>
+                        <field name="campo_a9"/>
+                        <field name="campo_a11"/>
+                        <field name="campo_a13"/>
+                        <field name="campo_a15"/>
+                        <field name="campo_a17"/>
+                        <field name="campo_a19"/>
+                    </group>
+                    <group>
+                        <field name="campo_a2"/>
+                        <field name="campo_a4"/>
+                        <field name="campo_a6"/>
+                        <field name="campo_a8"/>
+                        <field name="campo_a10"/>
+                        <field name="campo_a12"/>
+                        <field name="campo_a14"/>
+                        <field name="campo_a16"/>
+                        <field name="campo_a18"/>
+                    </group>
+                </group>
+                <group invisible="option != 'urgent'">
+                    <group>
+                        <field name="type_change_f2"/>
+                    </group>
+                    <group>
+                        <field name="campo_b2"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="campo_b3"/>
+                    <field name="campo_b4"/>
+                    <field name="campo_b5"/>
+                    <field name="campo_b6"/>
+                    <field name="campo_b7"/>
+                    <field name="campo_b8"/>
+                    <field name="campo_b9"/>
+                    <field name="campo_b10"/>
+                </group>
+                <footer>
+                    <button string="Confirm" type="object" name="action_confirm" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

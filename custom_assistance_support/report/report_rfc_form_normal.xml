@@ -1,0 +1,160 @@
+<odoo>
+    <data>
+        <template id="report_rfc_normal_template_pdf">
+            <t t-call="web.external_layout">
+                <main>
+                    <t t-set="item" t-value="docs[0]"/>
+                    <div class="page">
+                        <h2 style="text-align: center; margin-bottom: 20px;">Plantilla de RFC</h2>
+                        <table style="width: 100%; border-collapse: collapse;" border="1">
+                            <tbody>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">ID de cambio de infraestructura:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['id_change_f1']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">CI de servicio:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a2']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Resumen:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a3']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Fase de autorización:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a4']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Remitente:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a5']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Fecha programada de inicio:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a6']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Fecha programada de finalización:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a7']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Fecha deseada:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a8']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Clase:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a9']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Nivel de riesgo:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a10']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Prioridad:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a11']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Impacto:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a12']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Urgencia:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a13']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Motivo de planificación:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a14']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Estatus:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a15']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Motivo del estatus:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a16']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Gestor de cambios:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a17']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Coordinador de cambios:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a18']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left; width: 40%;padding-right:10px; border: 1px solid #000;">Empresas Ubicaciones:</th>
+                                    <td style="border: 1px solid #000; padding-right:10px;">
+                                        <t t-esc="item['campo_a19']"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+            </t>
+        </template>
+
+
+        <record id="paperformat_label_sheet" model="report.paperformat">
+            <field name="name">A4 Label Sheet</field>
+            <field name="default" eval="True" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="dpi">96</field>
+        </record>
+
+        <record id="action_report_normal_rfc_wizard" model="ir.actions.report">
+            <field name="name">RFC Normal</field>
+            <field name="model">form.action.rfc.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_assistance_support.report_rfc_normal_template_pdf</field>
+            <field name="report_file">custom_assistance_support.report_rfc_normal_template_pdf</field>
+            <field name="paperformat_id" ref="custom_assistance_support.paperformat_label_sheet"/>
+            <field name="print_report_name">'RFC-NORMAL'</field>
+            <field name="binding_model_id" ref="custom_assistance_support.model_form_action_rfc_wizard"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
