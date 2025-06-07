@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="service_request" model="ticket.category.type">
+            <field name="name">Atención al usuario</field>
+            <field name="color">1</field>
+        </record>
+        <record id="networking" model="ticket.category.type">
+            <field name="name">Networking</field>
+            <field name="color">2</field>
+        </record>
+        <record id="destroy_information" model="ticket.category.type">
+            <field name="name">Destrucción de información</field>
+            <field name="color">3</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -16,6 +16,9 @@ class HelpdeskTicket(models.Model):
     request_type_id = fields.Many2one(
         "request.type", string="Request Type", help="Type of request"
     )
+    ticket_category_id = fields.Many2one(
+        "ticket.category.type", string="Category Type", help="Type of category"
+    )
 
     follower_group_id = fields.Many2one(
         "mail.follower.group",

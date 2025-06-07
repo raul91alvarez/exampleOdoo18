@@ -24,6 +24,11 @@
                     <field name="request_type_ids" class="" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
                     <div class="text-end text-muted col-4">(any of these requests)</div>
                 </div>
+                <label for="ticket_category_ids"/>
+                <div class="d-flex justify-content-center">
+                    <field name="ticket_category_ids" class="" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/>
+                    <div class="text-end text-muted col-4">(any of these categories)</div>
+                </div>
             </xpath>
         </field>
     </record>

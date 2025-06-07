@@ -5,5 +5,6 @@ from . import (  # noqa: F401
     helpdesk_sla,
     helpdesk_ticket,
     request_type,
+    ticket_category,
     ticket_type,
 )

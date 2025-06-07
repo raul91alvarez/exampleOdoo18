@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ticket_category,ticket_category,model_ticket_category_type,helpdesk.group_helpdesk_user,1,1,1,1
 access_ticket_type,ticket_type,model_ticket_type,helpdesk.group_helpdesk_user,1,1,1,1
 access_request_type,request_type,model_request_type,helpdesk.group_helpdesk_user,1,1,1,1
 access_mail_follower_group_user,mail.follower.group,model_mail_follower_group,helpdesk.group_helpdesk_user,1,1,1,1

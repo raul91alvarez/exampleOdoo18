@@ -50,6 +50,9 @@ def migrate(cr, version):
         [("x_studio_selection_field_1pr_1il3nn5q5", "!=", False)]
     )
 
+    _logger.info(
+        f"Found {len(result)} tickets to change request type based on studio field."
+    )
     for ticket in result:
         studio_value_key = next(
             (
@@ -74,6 +77,33 @@ def migrate(cr, version):
         else:
             _logger.warning(
                 f"Request type not found for{studio_value_key} (Ticket ID: {ticket.id})"
+            )
+
+    _logger.info(
+        f"Found {len(result)} tickets to change category type based on studio field."
+    )
+
+    result_cat = HelpdeskTicket.search([("x_studio_categoria", "!=", False)])
+    for ticket in result_cat:
+        studio_value_key = next(
+            (k for k, v in MAPPING.items() if v == ticket.x_studio_categoria),
+            "",
+        )
+        category_type = env.ref(
+            "custom_assistance_support.%s" % studio_value_key, raise_if_not_found=False
+        )
+        _logger.info(
+            f"""mapping => {ticket.x_studio_categoria} to
+            {studio_value_key} and request_type: {category_type}"""
+        )
+        if category_type:
+            ticket.ticket_category_id = category_type.id
+            _logger.info(
+                f"Ticket {ticket.id} updated with request type '{studio_value_key}'."
+            )
+        else:
+            _logger.warning(
+                f"Category type not found for{studio_value_key} (Ticket ID: {ticket.id})"
             )
 
     _logger.info("Post-migration script completed.")

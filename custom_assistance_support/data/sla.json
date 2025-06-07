@@ -1,0 +1,151 @@
+{
+    "data": [
+        {
+            "name": "SLA - En reparación",
+            "status": "En reparación",
+            "priority": false,
+            "calendar": "Sample 9-5 Calendar",
+            "time": 24,
+            "team": 1
+        },
+        {
+            "name": "SLA - En espera de Usuario",
+            "status": "En espera",
+            "priority": false,
+            "calendar": "Sample 9-5 Calendar",
+            "time": 8,
+            "team": 1
+        },
+        {
+            "name": "SLA - Service requests Urgente",
+            "category": "service_request",
+            "priority": "3",
+            "request_types": [
+            "Ucontact",
+            "Forward (IT)",
+            "Conexión VPN (IT)",
+            "Conexión remota a PC (IT)",
+            "Softphone (X - Lite) (IT)",
+            "Error de usuarios (IT)",
+            "Correo Zimbra (IT)",
+            "Office 365 (IT)",
+            "Teams (IT)",
+            "Interaction Desktop (IT)",
+            "IC Business Manager (IT)"
+            ],
+            "calendar": "Sample 9-5 Calendar",
+            "time": 0.75,
+            "team": 1
+        },
+        {
+            "name": "SLA - Service requests Alta",
+            "category": "service_request",
+            "priority": "2",
+            "request_types": [
+            "Ucontact",
+            "Forward (IT)",
+            "Conexión VPN (IT)",
+            "Conexión remota a PC (IT)",
+            "Softphone (X - Lite) (IT)",
+            "Error de usuarios (IT)",
+            "Correo Zimbra (IT)",
+            "Office 365 (IT)",
+            "Teams (IT)",
+            "Interaction Desktop (IT)",
+            "IC Business Manager (IT)"
+            ],
+            "calendar": "Sample 9-5 Calendar",
+            "time": 1,
+            "team": 1
+        },
+        {
+            "name": "SLA - Service requests Media",
+            "category": "service_request",
+            "priority": "1",
+            "request_types": [
+            "Ucontact",
+            "Forward (IT)",
+            "Conexión VPN (IT)",
+            "Conexión remota a PC (IT)",
+            "Softphone (X - Lite) (IT)",
+            "Error de usuarios (IT)",
+            "Correo Zimbra (IT)",
+            "Office 365 (IT)",
+            "Teams (IT)",
+            "Interaction Desktop (IT)",
+            "IC Business Manager (IT)"
+            ],
+            "calendar": "Sample 9-5 Calendar",
+            "time": 1,
+            "team": 1
+        },
+        {
+            "name": "SLA - Service requests Baja",
+            "category": "service_request",
+            "priority": "0",
+            "request_types": [
+            "Ucontact",
+            "Forward (IT)",
+            "Conexión VPN (IT)",
+            "Conexión remota a PC (IT)",
+            "Softphone (X - Lite) (IT)",
+            "Error de usuarios (IT)",
+            "Correo Zimbra (IT)",
+            "Office 365 (IT)",
+            "Teams (IT)",
+            "Interaction Desktop (IT)",
+            "IC Business Manager (IT)"
+            ],
+            "calendar": "Sample 9-5 Calendar",
+            "time": 1.5,
+            "team": 1
+        },
+        {
+            "name": "SLA - Service requests Urgente (solo por prioridad)",
+            "category": "service_request",
+            "priority": "3",
+            "calendar": "Sample 9-5 Calendar",
+            "time": 1,
+            "team": 1
+        },
+        {
+            "name": "SLA - Service requests Alta (solo por prioridad)",
+            "category": "service_request",
+            "priority": "2",
+            "calendar": "Sample 9-5 Calendar",
+            "time": 1.33,
+            "team": 1
+        },
+        {
+            "name": "SLA - Service requests Media (solo por prioridad)",
+            "category": "service_request",
+            "priority": "1",
+            "calendar": "Sample 9-5 Calendar",
+            "time": 1.5,
+            "team": 1
+        },
+        {
+            "name": "SLA - Service requests Baja (solo por prioridad)",
+            "category": "service_request",
+            "priority": "0",
+            "calendar": "Sample 9-5 Calendar",
+            "time": 2.5,
+            "team": 1
+        },
+        {
+            "name": "SLA - Planificada",
+            "status": "Planificado",
+            "priority": false,
+            "calendar": "resource.resource_calendar_std",
+            "time": 120,
+            "team": 1
+        },
+        {
+            "name": "SLA - Actividades restantes",
+            "priority": false,
+            "calendar": "Sample 9-5 Calendar",
+            "time": 8,
+            "team": 1
+        }
+    ]
+}

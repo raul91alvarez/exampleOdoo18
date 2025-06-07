@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ir_cron_load_sla_from_gira" model="ir.cron">
+      <field name="name">Cargar SLA desde Jira</field>
+      <field name="model_id" ref="helpdesk.model_helpdesk_sla"/>
+      <field name="state">code</field>
+      <field name="code">model.load_sla_from_gira()</field>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="active" eval="False"/>
+    </record>
+</odoo>

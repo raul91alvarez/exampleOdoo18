@@ -13,6 +13,7 @@
                         icon="fa-file-pdf-o"/>
             </header>
             <xpath expr="//field[@name='team_id']" position="after">
+                <field name="ticket_category_id" />
                 <field name="request_type_id" />
                 <field name="ticket_type_id" />
             </xpath>
