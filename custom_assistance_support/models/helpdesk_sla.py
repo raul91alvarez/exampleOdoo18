@@ -33,11 +33,12 @@ class HelpdeskSLA(models.Model):
     def load_sla_from_gira(self):
         # Ruta absoluta al JSON (ajústala según la ubicación real en tu módulo)
         json_path = os.path.join(
-            "/odoo/odoo-18/odoo/custom-addons/exampleOdoo18",
-            "custom_assistance_support",
+            os.path.dirname(os.path.abspath(__file__)),
+            "..",
             "data",
             "sla.json",
         )
+        json_path = os.path.normpath(json_path)
 
         if not os.path.exists(json_path):
             raise UserError(
