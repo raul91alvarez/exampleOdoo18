@@ -147,7 +147,7 @@ class HelpdeskTicket(models.Model):
                     (not s.tag_ids or (tickets.tag_ids & s.tag_ids))
                     and (
                         not s.request_type_ids
-                        or tickets[0].request_type_ids == s.request_type_ids
+                        or tickets[0].request_type_id == s.request_type_ids
                     )
                 )
             )
