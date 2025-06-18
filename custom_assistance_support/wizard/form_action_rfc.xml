@@ -35,20 +35,19 @@
                 <group invisible="option != 'urgent'">
                     <group>
                         <field name="type_change_f2"/>
+                        <field name="campo_b3"/>
+                        <field name="campo_b5"/>
+                        <field name="campo_b7"/>
+                        <field name="campo_b9"/>
                     </group>
                     <group>
                         <field name="campo_b2"/>
+                        <field name="campo_b4"/>
+                        <field name="campo_b6"/>
+                        <field name="campo_b8"/>
+                        <field name="campo_b10"/>
                     </group>
-                </group>
-                <group>
-                    <field name="campo_b3"/>
-                    <field name="campo_b4"/>
-                    <field name="campo_b5"/>
-                    <field name="campo_b6"/>
-                    <field name="campo_b7"/>
-                    <field name="campo_b8"/>
-                    <field name="campo_b9"/>
-                    <field name="campo_b10"/>
+
                 </group>
                 <footer>
                     <button string="Confirm" type="object" name="action_confirm" class="btn-primary"/>
